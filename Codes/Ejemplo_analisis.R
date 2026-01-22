@@ -197,7 +197,7 @@ results <- broom::tidy(model_fit, exponentiate = TRUE, conf.int = TRUE, conf.lev
     select(term, estimate, std.error, statistic, p.value, conf.low, conf.high)
 
 results
-rio::export(results, file =  paste0("Output/", "Models/",  "Descriptivos_muestra", ".xlsx"))
+rio::export(results, file = paste0("Output/", "Models/", "Resultados_cox", ".xlsx"))
 
 # Figure
 results |> 
