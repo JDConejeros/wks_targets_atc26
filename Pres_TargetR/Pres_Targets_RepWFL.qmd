@@ -1,0 +1,87 @@
+---
+title: "Flujo de trabajo reproducible con R y {targets}"
+subtitle: "Laboratorio Abre Tu Ciencia"
+author: "José Daniel Conejeros, Msc."
+date: today
+date-format: long
+lang: es
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    slide-number-style: [bottom-right]
+    progress: true
+    transition: fade
+    background-transition: fade
+    transition-speed: fast
+    logo: "Images/ATC26.png"
+    footer: '<i class="fa fa-envelope"></i> <jdconejeros@uc.cl> | <i class="fab fa-github"></i> [JDConejeros](https://github.com/JDConejeros) | ATC 2026 | © Hecho en <a href="https://quarto.org/">Quarto <i class="fa fa-mug-hot"></i></a>'
+    html-math-method: mathjax
+    preview-links: true
+    code-fold: true
+    code-tools: true
+    highlight-style: github
+    fig-width: 10
+    fig-height: 6
+    fig-dpi: 300
+---
+
+## Hoy hablaremos sobre
+
+
+:::: {.columns}
+
+::: {.column width="40%"}
+- Automatización de `workflows`
+- Introducción de `targets` en R
+
+Link al material:  <a href="https://github.com/JDConejeros/wks_targets_atc26" class="btn btn-primary" style="background-color: #238636; color: white; padding: 5px 10px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px;">
+  <i class="fab fa-github"></i> Código
+</a>
+
+::: {.callout-note}
+*En Python el proceso es análogo con [snakemake](https://snakemake.readthedocs.io/en/stable/tutorial/interaction_visualization_reporting/tutorial.html).*
+
+:::
+
+
+:::
+
+::: {.column width="60%"}
+<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/XdDsb6psTES0eQo8Vg" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
+:::
+
+::::
+
+## ¿Por qué automatizar un flujo?
+
+Por **workflow** o flujo de trabajo nos referimos a la serie de pasos para llevar a cabo un análisis de datos.
+
+- Reproducibilidad
+- Eficiencia 
+- Escalabilidad
+- Mantenimiento 
+
+## Un poco sobre los datos 
+
+Vamos a utilizar una muestra aleatoria de los datos del artículo académico:
+
+
+::: {.callout-note}
+Blanco, E., Conejeros, J.D., González-Reyes, Á. et al. Heat beyond percentiles: exploring preterm birth risks in Santiago, Chile (1991–2019). *Int Arch Occup Environ Healt* **99**, 5 (2026). <https://doi.org/10.1007/s00420-025-02196-x>
+:::
+
+Puedes acceder a los códigos de este artículo aquí: <a href="https://doi.org/10.5281/zenodo.17316762" class="btn btn-primary" style="background-color: #238636; color: white; padding: 5px 10px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px;">
+  <i class="fab fa-github"></i> Repositorio
+</a>
+
+
+
+
+## Recomendaciones joya
+
+- Estructura de proyectos por Danielle Navarro: 🔗 [Slides](https://djnavarro.net/slides-project-structure/#1)
+- Ciencia Reproducible por Dan Ovando: 🔗 [Slides](https://danovando.github.io/reproducible-workflow/presentations/reproducibility-101#1)
+- Proyectos Buenos por Barbara Vreede: 🔗 [Repositorio](https://github.com/bvreede/good-enough-project)
+- Automatización de workflows en R y Python con targets y snakemake por Diana García Cortés: 🔗 [Repositorio](https://github.com/ddiannae/latinr-targets?tab=readme-ov-file)
+- Protocolos de Análisis Reproducible por Lisa: 🔗 [Website](https://lisacoes.com/protocolos/a-ipo-rep/)

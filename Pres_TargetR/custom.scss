@@ -1,0 +1,327 @@
+/*-- scss:defaults --*/
+
+// Color scheme - Darker blue based on ATC26
+$primary-blue: #1a365d;
+$secondary-blue: #2c5282;
+$accent-blue: #2d3748;
+$text-color: #2d3748;
+$light-bg: #ffffff;
+
+/*-- scss:rules --*/
+
+/* Custom styles for ATC26 Positron Introduction Presentation */
+
+/* Fonts - Similar to academic/research websites */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+/* Font Awesome for icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+/* Base styles */
+.reveal {
+  font-family: 'Inter', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1.8em;
+  font-weight: 400;
+  color: $text-color;
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Sans Pro', 'Inter', sans-serif;
+    font-weight: 700;
+    color: $primary-blue;
+    text-transform: none;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    font-size: 2em;
+    color: $primary-blue;
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+    color: $primary-blue;
+    font-weight: 700;
+  }
+  
+  h3 {
+    font-size: 1.2em;
+    color: $primary-blue;
+    font-weight: 700;
+  }
+  
+  /* Links */
+  a {
+    color: $secondary-blue;
+    text-decoration: underline;
+    
+    &:hover {
+      color: $primary-blue;
+    }
+  }
+  
+  /* Code */
+  code {
+    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+    background-color: #f1f5f9;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    color: #c53030;
+  }
+  
+  pre {
+    background-color: #1e293b;
+    color: #e2e8f0;
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    code {
+      background-color: transparent;
+      color: inherit;
+      padding: 0;
+    }
+  }
+  
+  /* Tables */
+  table {
+    border-collapse: collapse;
+    margin: 1em auto;
+    
+    th {
+      background-color: $primary-blue;
+      color: white;
+      padding: 0.5em 1em;
+      font-weight: 600;
+    }
+    
+    td {
+      padding: 0.5em 1em;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    tr:hover {
+      background-color: #f7fafc;
+    }
+  }
+  
+  /* Blockquotes */
+  blockquote {
+    border-left: 4px solid $secondary-blue;
+    padding-left: 1em;
+    font-style: italic;
+    color: $accent-blue;
+  }
+  
+  /* Lists */
+  ul, ol {
+    margin-left: 1.5em;
+  }
+  
+  li {
+    margin: 0.5em 0;
+    line-height: 1.6;
+  }
+  
+  /* Progress bar */
+  .progress {
+    height: 4px;
+    background-color: rgba(26, 54, 93, 0.2);
+    
+    span {
+      background-color: $secondary-blue;
+    }
+  }
+  
+  /* Slide number - bottom, no underline */
+  .slide-number {
+    color: $secondary-blue;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    font-size: 0.8em;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1001;
+    text-decoration: none !important;
+    
+    a {
+      text-decoration: none !important;
+      color: $secondary-blue;
+    }
+  }
+  
+  
+  /* Footer */
+  .footer {
+    color: $secondary-blue;
+    font-size: 0.5em;
+    text-align: center;
+    
+    a {
+      color: $secondary-blue;
+      text-decoration: none;
+      
+      &:hover {
+        color: $primary-blue;
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  /* Logo - larger size */
+  .reveal .logo {
+    max-height: 360px !important;
+    height: 360px !important;
+    width: auto !important;
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
+  
+  /* Ensure logo image itself has no shadow and larger size */
+  .reveal .logo img,
+  .reveal .logo svg {
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    max-height: 360px !important;
+    height: 360px !important;
+    width: auto !important;
+  }
+  
+  /* Logo container - more specific selectors for reveal.js */
+  .reveal.has-logo .logo,
+  .reveal.has-logo .logo img {
+    max-height: 360px !important;
+    height: 360px !important;
+    width: auto !important;
+  }
+}
+
+/* Menu controls - same color as text */
+.reveal .controls {
+  color: $secondary-blue;
+  
+  button {
+    color: $secondary-blue;
+    
+    &:hover {
+      color: $primary-blue;
+    }
+    
+    &:focus {
+      color: $secondary-blue;
+    }
+  }
+  
+  .controls-arrow {
+    color: $secondary-blue;
+  }
+}
+
+/* Hamburger menu (3 lines) - same color as footer */
+.reveal .slide-menu-button {
+  color: $secondary-blue !important;
+  
+  i,
+  svg {
+    color: $secondary-blue !important;
+    fill: $secondary-blue !important;
+  }
+  
+  &::before,
+  &::after {
+    background-color: $secondary-blue !important;
+  }
+  
+  &:hover {
+    color: $primary-blue !important;
+    
+    i,
+    svg {
+      color: $primary-blue !important;
+      fill: $primary-blue !important;
+    }
+  }
+}
+
+/* Menu button icon - ensure all lines are same color as footer */
+.reveal .slide-menu-button i.fa-bars,
+.reveal .slide-menu-button i.fas,
+.reveal .slide-menu-button svg,
+.reveal .slide-menu-button path {
+  color: $secondary-blue !important;
+  fill: $secondary-blue !important;
+  stroke: $secondary-blue !important;
+}
+
+/* Progress bar color */
+.reveal .progress {
+  span {
+    background-color: $secondary-blue;
+  }
+}
+
+/* Columns layout */
+.reveal .columns {
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+}
+
+.reveal .column {
+  flex: 1;
+}
+
+/* R-stretch for images */
+.reveal .r-stretch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Custom callout boxes */
+.callout {
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 6px;
+  border-left: 4px solid;
+  
+  &.callout-note {
+    background-color: #e6f3ff;
+    border-color: $secondary-blue;
+  }
+  
+  &.callout-tip {
+    background-color: #f0fff4;
+    border-color: #48bb78;
+  }
+  
+  &.callout-warning {
+    background-color: #fffaf0;
+    border-color: #ed8936;
+  }
+}
+
+/* Smooth transitions */
+.reveal .slides section {
+  transition: opacity 0.6s ease-in-out;
+}
+
+/* Code block improvements */
+.reveal pre code {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+/* Print styles */
+@media print {
+  .reveal .progress,
+  .reveal .slide-number {
+    display: none;
+  }
+}
