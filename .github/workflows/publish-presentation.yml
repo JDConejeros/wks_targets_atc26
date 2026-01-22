@@ -25,15 +25,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          version: latest
-
-      - name: Render presentation
-        working-directory: Pres_TargetR
-        run: quarto render Pres_Targets_RepWFL.qmd
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
