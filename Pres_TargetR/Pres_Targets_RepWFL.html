@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="Pres_Targets_RepWFL_files/libs/revealjs/dist/theme/quarto-202dfc989835426ae40489c4dbec4182.css">
+  <link rel="stylesheet" href="Pres_Targets_RepWFL_files/libs/revealjs/dist/theme/quarto-067238ece59a5a41e672f7f78feb8e92.css">
   <link href="Pres_Targets_RepWFL_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="Pres_Targets_RepWFL_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="Pres_Targets_RepWFL_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -128,7 +128,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Flujo de trabajo reproducible con R y {targets}</h1>
-  <p class="subtitle">Laboratorio Abre Tu Ciencia</p>
+  <p class="subtitle">Laboratorio Abre Tu Ciencia <br> <img data-src="Images/logo_targets.svg" style="width:15.0%"></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -143,12 +143,21 @@ José Daniel Conejeros, Msc.
 <section id="hoy-hablaremos-sobre" class="slide level2">
 <h2>Hoy hablaremos sobre</h2>
 <div class="columns">
-<div class="column" style="width:40%;">
+<div class="column" style="width:60%;">
+<p><br></p>
 <ul>
 <li>Automatización de <code>workflows</code></li>
 <li>Introducción de <code>targets</code> en R</li>
 </ul>
 <p>Link al material: <a href="https://github.com/JDConejeros/wks_targets_atc26" class="btn btn-primary" style="background-color: #238636; color: white; padding: 5px 10px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px;"> <i class="fab fa-github"></i> Código </a></p>
+</div><div class="column" style="width:40%;">
+<div style="width:100%;height:0;padding-bottom:100%;position:relative;">
+<iframe src="https://giphy.com/embed/XdDsb6psTES0eQo8Vg" width="100%" height="100%" style="position:absolute" frameborder="0" class="giphy-embed" allowfullscreen="">
+</iframe>
+</div>
+<p>
+</p>
+</div></div>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -162,27 +171,164 @@ José Daniel Conejeros, Msc.
 </div>
 </div>
 </div>
-</div><div class="column" style="width:60%;">
-<div style="width:100%;height:0;padding-bottom:100%;position:relative;">
-<iframe src="https://giphy.com/embed/XdDsb6psTES0eQo8Vg" width="100%" height="100%" style="position:absolute" frameborder="0" class="giphy-embed" allowfullscreen="">
-</iframe>
-</div>
-<p>
-</p>
-</div></div>
 </section>
 <section id="por-qué-automatizar-un-flujo" class="slide level2">
 <h2>¿Por qué automatizar un flujo?</h2>
 <p>Por <strong>workflow</strong> o flujo de trabajo nos referimos a la serie de pasos para llevar a cabo un análisis de datos.</p>
 <ul>
-<li>Reproducibilidad</li>
-<li>Eficiencia</li>
-<li>Escalabilidad</li>
-<li>Mantenimiento</li>
+<li>Reproducibilidad: Obtener resultados utilizando los mismos datos de entrada, pasos computacionales, métodos, código y condiciones de análisis.</li>
+</ul>
+<p>Pero además:</p>
+<ul>
+<li>Eficiencia.</li>
+<li>Escalabilidad.</li>
+<li>Mantenimiento.</li>
 </ul>
 </section>
-<section id="un-poco-sobre-los-datos" class="slide level2">
-<h2>Un poco sobre los datos</h2>
+<section id="desafíos-de-la-reproducibilidad" class="slide level2">
+<h2>Desafíos de la reproducibilidad</h2>
+<ol type="1">
+<li>Directorios/rutas de trabajo.</li>
+<li>Paquetes y versionamiento.</li>
+<li>Pipeline o flujo poco claro.</li>
+<li>Sin información de dependencias.</li>
+<li>Cambios en el código.</li>
+</ol>
+</section>
+<section id="targets" class="slide level2">
+<h2>Targets</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="Images/logo_targets.svg" style="width:70.0%"></p>
+</div><div class="column" style="width:70%;">
+<p>El paquete <code>targets</code> es una herramienta de pipeline para R enfocada en análisis estadístico y ciencia de datos: coordina una serie de pasos computacionales (llamados <em>targets</em>) y, al igual que otros sistemas de flujo de trabajo, evita recalcular pasos cuyos datos o código no han cambiado, lo que ahorra tiempo y mejora la reproducibilidad de proyectos complejos.</p>
+</div></div>
+<p>Cada <em>target</em> representa una tarea definida por funciones de R, y la estructura de dependencias entre ellos forma un gráfico acíclico dirigido (DAG) que targets utiliza para decidir qué ejecutar y qué saltarse.</p>
+<p>Puedes ver toda la documentación aquí: <a href="https://books.ropensci.org/targets/" class="btn btn-primary" style="background-color: #2c5282; color: white; padding: 5px 10px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px;"> <i class="fab fa-github"></i> Manual </a> <a href="https://docs.ropensci.org/targets/" class="btn btn-primary" style="background-color: #238636; color: white; padding: 5px 10px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px;"> <i class="fab fa-github"></i> Repositorio </a></p>
+</section>
+<section id="por-qué-targets" class="slide level2">
+<h2>¿Por qué targets?</h2>
+
+<img data-src="Images/notebook-dilemma.png" class="quarto-figure quarto-figure-center r-stretch"><p>¿Qué debo volver a correr?, ¿puedo saltarme pasos para ahorrar tiempo?, ¿qué modelos específicos se ven afectados?, ¿tengo que rehacer todo para garantizar reproducibilidad?</p>
+</section>
+<section id="targets-1" class="slide level2">
+<h2>Targets</h2>
+<p>La filosofía del paquete impulsa un estilo de programación <strong>orientado a funciones dentro de R</strong>, promueve reproducibilidad al abstraer archivos como objetos de R y facilita paralelización implícita, lo que permite construir análisis eficientemente, mantenerlos organizados y asegurar que los resultados sean coherentes con el código y los datos actuales</p>
+<p>Algunas alternativas:</p>
+<ul>
+<li>Paquete <a href="https://docs.ropensci.org/drake/">drake</a> (antecesor de targets).</li>
+<li>Paquete <a href="https://workflowr.github.io/workflowr/">workflowr</a> (no gestiona dependencias).</li>
+</ul>
+</section>
+<section id="targets-2" class="slide level2">
+<h2>Targets</h2>
+
+<img data-src="Images/pipeline_graph.png" class="quarto-figure quarto-figure-center r-stretch"><ol type="1">
+<li>Actualiza solo lo necesario.</li>
+<li>Cálculos escalables.</li>
+<li>Gestiona los datos de salida.</li>
+</ol>
+</section>
+<section id="targets-3" class="slide level2">
+<h2>Targets</h2>
+<p><strong>Principales funciones de trabajo</strong>:</p>
+<ol type="1">
+<li><p>Definición del pipeline:</p>
+<ul>
+<li><code>tar_pipeline()</code>: define el pipeline completo como una colección de targets.</li>
+<li><code>tar_target()</code>: <strong>define un paso del pipeline (un objeto o resultado a producir)</strong>.</li>
+<li><code>tar_option_set()</code>: define opciones globales del pipeline (paquetes, formato, recursos).</li>
+<li><code>tar_source()</code>: carga archivos R con funciones o targets auxiliares.</li>
+</ul></li>
+</ol>
+</section>
+<section id="targets-4" class="slide level2">
+<h2>Targets</h2>
+<p><strong>Principales funciones de trabajo</strong>:</p>
+<ol start="2" type="1">
+<li><p>Ejecución y control:</p>
+<ul>
+<li><code>tar_make()</code>: <strong>ejecuta el pipeline, corriendo solo lo que está desactualizado</strong>.</li>
+<li><code>tar_make_clustermq()</code>: ejecuta el pipeline en paralelo usando clustermq.</li>
+<li><code>tar_make_future()</code>: ejecuta el pipeline en paralelo usando future.</li>
+<li><code>tar_destroy()</code>: borra el estado del pipeline y la cache.</li>
+<li><code>tar_prune()</code>: elimina targets obsoletos de la cache.</li>
+</ul></li>
+</ol>
+</section>
+<section id="targets-5" class="slide level2">
+<h2>Targets</h2>
+<p><strong>Principales funciones de trabajo</strong>:</p>
+<ol start="3" type="1">
+<li><p>Inspección y diagnóstico:</p>
+<ul>
+<li><code>tar_visnetwork()</code>: visualiza el DAG del pipeline.</li>
+<li><code>tar_glimpse()</code>: muestra un resumen rápido de los targets.</li>
+<li><code>tar_progress()</code>: muestra el progreso de ejecución.</li>
+<li><code>tar_outdated()</code>: identifica qué targets necesitan re‐ejecutarse.</li>
+<li><code>tar_meta()</code>: inspecciona metadatos de los targets.</li>
+<li><code>tar_manifest()</code>: lista todos los targets definidos.</li>
+</ul></li>
+</ol>
+</section>
+<section id="targets-6" class="slide level2">
+<h2>Targets</h2>
+<p><strong>Principales funciones de trabajo</strong>:</p>
+<ol start="4" type="1">
+<li><p>Branching (reemplaza loops manuales por paralelización declarativa):</p>
+<ul>
+<li><code>tar_map()</code>: define branching dinámico a partir de una lista o vector.</li>
+<li><code>tar_combine()</code>: combina los resultados de múltiples ramas en un solo target.</li>
+<li><code>tar_group()</code>: agrupa ramas para control de ejecución.</li>
+<li><code>tar_rep()</code>: replica un target múltiples veces (útil para simulaciones).</li>
+</ul></li>
+</ol>
+</section>
+<section id="targets-7" class="slide level2">
+<h2>Targets</h2>
+<p><strong>Principales funciones de trabajo</strong>:</p>
+<ol start="5" type="1">
+<li><p>Reportes y comunicación:</p>
+<ul>
+<li><code>tar_render()</code>: renderiza documentos Quarto/R Markdown como parte del pipeline.</li>
+<li><code>tar_quarto()</code>: renderiza documentos Quarto (.qmd) integrados al pipeline.</li>
+<li><code>tar_read()</code>: recupera el valor de un target ya calculado.</li>
+<li><code>tar_load()</code>: carga targets directamente en el entorno de R.</li>
+</ul></li>
+</ol>
+</section>
+<section id="recomendaciones-iniciales" class="slide level2">
+<h2>Recomendaciones iniciales</h2>
+<ul>
+<li>Empieza con proyectos pequeños.</li>
+<li>Aunque tome más tiempo, incorpora estas herramientas desde el inicio.</li>
+<li>Tal vez cambie un poco tu forma de trabajar, pero los beneficios valen la pena.</li>
+<li>Consulta la documentación oficial y ejemplos en línea: <a href="https://books.ropensci.org/targets/" class="btn btn-primary" style="background-color: #2c5282; color: white; padding: 5px 10px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px;"> <i class="fab fa-github"></i> Intro a Targets </a></li>
+</ul>
+</section>
+<section id="universo-targets" class="slide level2">
+<h2>Universo Targets</h2>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Images/targetopia.png" class="quarto-figure quarto-figure-center" style="max-width:70%;max-height:70%"></p>
+</figure>
+</div>
+<p>🔗 <a href="https://wlandau.github.io/targetopia/packages.html">https://wlandau.github.io/targetopia/packages.html</a></p>
+</section>
+<section id="recomendaciones-joya" class="slide level2">
+<h2>Recomendaciones joya</h2>
+<ul>
+<li>Estructura de proyectos por Danielle Navarro: 🔗 <a href="https://djnavarro.net/slides-project-structure/#1">Slides</a></li>
+<li>Ciencia Reproducible por Dan Ovando: 🔗 <a href="https://danovando.github.io/reproducible-workflow/presentations/reproducibility-101#1">Slides</a></li>
+<li>Proyectos Buenos por Barbara Vreede: 🔗 <a href="https://github.com/bvreede/good-enough-project">Repositorio</a></li>
+<li>Automatización de workflows en R y Python con targets y snakemake por Diana García Cortés: 🔗 <a href="https://github.com/ddiannae/latinr-targets?tab=readme-ov-file">Repositorio</a></li>
+<li>Introducción a Targets por Will Landau 🔗 <a href="https://wlandau.github.io/targets-intro/#/section">Slides</a></li>
+<li>Protocolos de Análisis Reproducible por Lisa: 🔗 <a href="https://lisacoes.com/protocolos/a-ipo-rep/">Website</a></li>
+</ul>
+</section>
+<section id="manos-a-los-datos" class="slide level2">
+<h2>Manos a los datos</h2>
 <p>Vamos a utilizar una muestra aleatoria de los datos del artículo académico:</p>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -198,16 +344,6 @@ José Daniel Conejeros, Msc.
 </div>
 </div>
 <p>Puedes acceder a los códigos de este artículo aquí: <a href="https://doi.org/10.5281/zenodo.17316762" class="btn btn-primary" style="background-color: #238636; color: white; padding: 5px 10px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px;"> <i class="fab fa-github"></i> Repositorio </a></p>
-</section>
-<section id="recomendaciones-joya" class="slide level2">
-<h2>Recomendaciones joya</h2>
-<ul>
-<li>Estructura de proyectos por Danielle Navarro: 🔗 <a href="https://djnavarro.net/slides-project-structure/#1">Slides</a></li>
-<li>Ciencia Reproducible por Dan Ovando: 🔗 <a href="https://danovando.github.io/reproducible-workflow/presentations/reproducibility-101#1">Slides</a></li>
-<li>Proyectos Buenos por Barbara Vreede: 🔗 <a href="https://github.com/bvreede/good-enough-project">Repositorio</a></li>
-<li>Automatización de workflows en R y Python con targets y snakemake por Diana García Cortés: 🔗 <a href="https://github.com/ddiannae/latinr-targets?tab=readme-ov-file">Repositorio</a></li>
-<li>Protocolos de Análisis Reproducible por Lisa: 🔗 <a href="https://lisacoes.com/protocolos/a-ipo-rep/">Website</a></li>
-</ul>
 
 </section>
     </div>
