@@ -1,0 +1,50 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+path_fig_tendencias|stem|d5d9e81231a2d22c|cc217ea2099a6484|2c530c1562a7fbd1|1985803947|Output/Figures/Nacimiento_trends.png|t20475.372164963s|s412917b|412917|file|local|vector|||0.001||
+path_datos|stem|f7f8887638d6c411|21cb2a0330e4cac7|2c530c1562a7fbd1|1954044044|Input/data/Nacimientos_Santiago_muestra10_1992_2020.RData|t20475.3720829165s|s2117333b|2117333|file|local|vector|||0||
+path_modelo_fig_png|stem||240dd70254a68452|2c530c1562a7fbd1|-1042626146|Output/Figures/Forest_HW_p90_2d_bin.png|t20475.3872491005s||0|file|local|vector|||||Error resolving output location: missing files: Output/Figures/Forest_HW_p90_2d_bin.png
+cox_predictor|stem|ba4fc6e13f018fc4|f009ebb7de6649e0|2c530c1562a7fbd1|975537713||t20475.3880795895s|s66b|66|rds|local|vector|||0.001||
+dir_output_figures|stem|7464aebbdfc0e75f|3b19d423ad7780bc|2c530c1562a7fbd1|505439261||t20475.3880815487s|s67b|67|rds|local|vector|||0||
+dir_output_models|stem|f717798d6ece78d9|3eece97cdfeeebf9|2c530c1562a7fbd1|-1661521867||t20475.3880836792s|s66b|66|rds|local|vector|||0||
+dir_output_tables|stem|6f5caca3372431c2|6f83051e14d02a70|2c530c1562a7fbd1|1690956957||t20475.3880856701s|s66b|66|rds|local|vector|||0||
+cox_dependent|stem|0ee1af598141edcf|1e80b7b2603d144a|2c530c1562a7fbd1|431391703||t20475.3880876496s|s66b|66|rds|local|vector|||0||
+nacimientos_raw|stem|345317c76e7cec93|36a638e07c063a9c|a016ccb352250595|-441787454||t20475.3880958666s|s2117277b|2117277|rds|local|vector|||0.048|Missing `trust` will be set to FALSE by default for RData in 2.0.0.|
+formula_cox|stem|f03afff7c0f691c6|74395e1ea1dd33ab|9906155b8d65d6a7|1468930237||t20475.3880979374s|s272b|272|rds|local|vector|||0.001||
+nacimientos|stem|16b3e6ba5ab47a53|57fe1f9b916a5093|d7619e43cc7e4e95|399357220||t20475.3881063882s|s2158937b|2158937|rds|local|vector|||0.007||
+modelo_cox|stem|f8e4dab4df32b7ce|ead88e2c0c5fcb47|3e3d3176fa5b44f5|-759576867||t20475.388117345s|s1021177b|1021177|rds|local|vector|||0.623|Loglik converged before variable  6 ; coefficient may be infinite.|
+descriptivos_tabla|stem|bd3d3606fc61eccb|588e79b99888ce75|b57009376c4bfc8d|1230878638||t20475.3881286223s|s1135b|1135|rds|local|vector|||0.748|fixed.digits is deprecated and will be removed in a future version in favor of a setting in|
+tendencias_tabla|stem|014d983a37c5e41b|bb61c5a94a81fb65|64d02d5e3ffc4779|1552169955||t20475.3881314774s|s1488b|1488|rds|local|vector|||0.013||
+modelo_cox_resultados|stem|bb296db6147e33d9|12f41cc0aa4a169e|78176ab3de0afd30|-912738093||t20475.3881338833s|s1025b|1025|rds|local|vector|||0.004||
+descriptivos_xlsx|stem|666f618c10020c89|ee899333a9f74446|2eddb0dce62e22cc|-2052432663|Output/Tables/Descriptivos_muestra.xlsx|t20475.3881362218s|s6968b|6968|file|local|vector|||0.018||
+tendencias_figuras|stem|e087ae8bb09a5dd2|4ea0b3e626e1843f|b74fc4a48101d352|1306497627||t20475.3881420422s|s901375b|901375|rds|local|vector|||0.085||
+modelo_fig|stem|5fff0d9c3eb42efa|db5bc3ad40e87745|1f8cfd97b7159f47|-337836050||t20475.3881453032s|s318537b|318537|rds|local|vector|||0.025||
+modelo_xlsx|stem|a97d8a065ed94452|083bb06553e91083|d71babdc103769af|-697213881|Output/Models/Resultados_cox.xlsx|t20475.3881474063s|s6118b|6118|file|local|vector|||0.005||
+tendencias_panel|stem|f341e4249789d45e|a1be6ded8c5cc349|18ad9585fb0370d8|-574586351||t20475.3881709458s|s5084781b|5084781|rds|local|vector|||0.378||
+modelo_fig_png|stem|96c85c8a2d403cb5|bac0ec8b0c1f9268|2368f86b3235fc6e|-646769405|Output/Figures/Forest_HW_p90_2d_bin.png|t20475.3881745333s|s28661b|28661|file|local|vector|||0.082||
+fig_tendencias_png|stem|d5d9e81231a2d22c|262cd7e2265035c3|9844a368bc208095|-1432316774|Output/Figures/Nacimiento_trends.png|t20475.3881892918s|s412917b|412917|file|local|vector|||0.195||
+tab1|object|9431f0f193e9c392
+formula|object|39613d173dc463ed
+data|object|c3842f8dfa353750
+titles|object|1ef157fd10dfab74
+install_load|function|23bbe9127cb25430
+model_fit|object|12f40c0337cf5894
+plots_data|object|ea3983ebab3ba61d
+results|object|733a8cbddb557a89
+predictor|object|febc4258926f437f
+table|object|41a4caf7ae0d21ec
+figures|object|8ac03608c3d4b850
+dependent|object|6ee73ae1a19184ed
+guardar_png|function|19f7b5a922dfe95f
+titulos_tendencias|function|235a17a76b483ac6
+armar_formula_cox|function|d0fb19405befa651
+crear_tabla_tendencias|function|c197e133fd544400
+cargar_datos_nacimientos|function|25d12d59e3a0300b
+guardar_tabla_xlsx|function|df762c63cd3d402e
+.Random.seed|object|81791b1c00c67453
+crear_outcomes_gestacionales|function|46fa5217ea2cf6be
+extraer_resultados_cox|function|94c07e1eba9d6e8e
+crear_tabla_descriptiva|function|43f7a6c371bfc8fd
+armar_panel_tendencias|function|23e0b83e8a93fab4
+ajustar_cox|function|867d51cafe6eb81a
+figura_forest_predictor|function|d2ad91c03a74b2d1
+guardar_resultados_xlsx|function|a3ef1c6b30cf9520
+crear_figuras_tendencias|function|5ff76e4b5a612262

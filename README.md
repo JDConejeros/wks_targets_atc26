@@ -51,3 +51,47 @@ quarto render Pres_Targets_RepWFL.qmd
   - `Images/`: Imágenes utilizadas en la presentación
 - `Input/`: Datos de entrada del proyecto
 - `.github/workflows/`: Configuración de GitHub Actions para publicación automática
+
+## Pipeline reproducible con {targets}
+
+Además del script de referencia `Codes/code_ref.R` (que NO se borra), dejé un pipeline completo con `{targets}` en `_targets.R`.
+
+La idea es simple: yo corro una vez `tar_make()` y el proyecto genera los mismos productos (figuras, tablas y modelos). Si después cambiás algo (una función, el archivo de datos, etc.), targets recalcula solo lo que corresponde.
+
+### Cómo correr
+
+```r
+library(renv)
+renv::restore()
+
+library(targets)
+tar_make()
+```
+
+### Qué produce
+
+- `Output/Figures/Nacimiento_trends.png`
+- `Output/Tables/Descriptivos_muestra.xlsx`
+- `Output/Models/Resultados_cox.xlsx`
+- `Output/Figures/Forest_HW_p90_2d_bin.png`
+
+### Cómo mirar lo que pasó
+
+```r
+library(targets)
+tar_glimpse()
+tar_manifest()
+```
+
+### Scripts listos para usar (desde Terminal)
+
+```bash
+Rscript Codes/run_targets.R
+Rscript Codes/dependencies.R
+Rscript Codes/dependencies_from_session.R
+```
+
+#### Nota sobre gráficos de dependencias
+
+En macOS, algunas visualizaciones pueden arrastrar paquetes que necesitan compilación (por ejemplo, FORTRAN/gfortran).
+Por eso dejé alternativas livianas (`tar_glimpse()` y `tar_manifest()`) para inspeccionar el pipeline sin trabas.
